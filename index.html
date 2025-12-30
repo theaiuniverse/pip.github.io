@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>pipa.dev — Performance & Security Testing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0b0e14;
+  --card: #121725;
+  --primary: #6cf2c2;
+  --accent: #7aa2ff;
+  --text: #e8ebf1;
+  --muted: #9aa4bf;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #121a2f, var(--bg));
+  color: var(--text);
+}
+
+/* ---------------- NAV ---------------- */
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(11,14,20,.7);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  z-index: 100;
+}
+nav .wrap {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  opacity: .85;
+}
+nav a:hover { opacity: 1; }
+.brand {
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  max-width: 1100px;
+  margin: auto;
+  padding: 120px 20px 90px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 60px;
+}
+.hero h1 {
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  margin: 0;
+}
+.hero p {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 18px;
+  margin: 24px 0 40px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 28px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+.hero-card {
+  background: linear-gradient(180deg, #161c34, #0f1322);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.6);
+}
+.hero-card small { color: var(--muted); }
+
+/* ---------------- SECTIONS ---------------- */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 90px 20px;
+}
+section h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+section > p {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* ---------------- GRID ---------------- */
+.grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.card span {
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+.card h3 { margin: 12px 0 10px; }
+
+/* ---------------- TIMELINE ---------------- */
+.timeline {
+  border-left: 2px solid rgba(255,255,255,.1);
+  padding-left: 30px;
+  margin-top: 50px;
+}
+.step {
+  margin-bottom: 40px;
+}
+.step strong {
+  color: var(--primary);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="brand">pipa.dev</div>
+    <div>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#process">Process</a>
+      <a href="#clients">Dogfooding</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Performance and security testing, grounded in reality.</h1>
+    <p>
+      pipa.dev is an engineering-led studio helping teams uncover
+      performance bottlenecks and security failures before users — or attackers — do.
+    </p>
+    <a class="cta" href="#contact">Talk to engineers →</a>
+  </div>
+
+  <div class="hero-card">
+    <small>We focus on</small>
+    <h3>
+      • Load & stress testing<br>
+      • API & auth security<br>
+      • Cloud & infra failures
+    </h3>
+    <small>No audits we wouldn’t trust ourselves.</small>
+  </div>
+</div>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <h2>What we actually test</h2>
+  <p>
+    Not checklists. Not compliance theater.
+    We test the parts of systems that fail under pressure.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <span>PERFORMANCE</span>
+      <h3>Real Traffic Simulation</h3>
+      <p>
+        Spike loads, cold starts, slow queries, queue backlogs —
+        modeled after real production behavior.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>SECURITY</span>
+      <h3>Practical Threats</h3>
+      <p>
+        Auth flows, rate limits, token leaks, misconfigured infra,
+        and abuse cases attackers actually exploit.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>INFRA</span>
+      <h3>Cloud Failure Modes</h3>
+      <p>
+        Autoscaling limits, noisy neighbors, deploy regressions,
+        and region-level degradation.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>ENGINEERING</span>
+      <h3>Actionable Fixes</h3>
+      <p>
+        Repro steps, metrics, and recommendations your team can
+        implement immediately.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <h2>How we work</h2>
+  <p>
+    Simple, transparent, and designed to plug directly into
+    how engineering teams already operate.
+  </p>
+
+  <div class="timeline">
+    <div class="step">
+      <strong>01 — Understand the system</strong>
+      <p>Architecture, traffic patterns, infra, and failure history.</p>
+    </div>
+    <div class="step">
+      <strong>02 — Break it intentionally</strong>
+      <p>Load, abuse, misconfigurations, and edge cases.</p>
+    </div>
+    <div class="step">
+      <strong>03 — Measure what matters</strong>
+      <p>Latency percentiles, error rates, blast radius.</p>
+    </div>
+    <div class="step">
+      <strong>04 — Fix and re-test</strong>
+      <p>Validate improvements, not just findings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DOGFOODING -->
+<section id="clients">
+  <h2>Built by testers. Used by ourselves.</h2>
+  <p>
+    We dogfood everything we sell.
+    Our own platform runs the same tests, attack scenarios,
+    and performance checks before touching client systems.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <span>DOGFOODING</span>
+      <h3>Our Own Platform</h3>
+      <p>
+        Every regression we catch internally improves the tooling
+        and methodology we bring to clients.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>PERFORMANCE</span>
+      <h3>Production-Grade Load</h3>
+      <p>
+        We test with real traffic shapes — bursts, idle gaps,
+        retries, and bad deploys included.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>SECURITY</span>
+      <h3>Adversarial Thinking</h3>
+      <p>
+        Designed by engineers who’ve seen how breaches
+        actually happen.
+      </p>
+    </div>
+
+    <div class="card">
+      <span>NO THEATER</span>
+      <h3>Engineer-Readable Output</h3>
+      <p>
+        No glossy PDFs. Just evidence, steps,
+        and fixes.
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top: 70px; text-align: center; opacity: .65;">
+    Tested on APIs, queues, auth, background workers, and cloud workloads —
+    before touching yours.
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Let’s break your system — safely</h2>
+  <p>
+    Email <strong>hello@pipa.dev</strong><br>
+    Or start with a short technical conversation.
+  </p>
+</section>
+
+<footer>
+  © 2025 pipa.dev — Performance & Security Testing, done properly.
+</footer>
+
+</body>
+</html>
